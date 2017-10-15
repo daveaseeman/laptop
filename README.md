@@ -39,10 +39,10 @@ and once it appears, press `return` to launch it.
 In your Terminal window, copy and paste the command below, then press `return`.
 
 ```sh
-bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
+bash <(curl -s https://raw.githubusercontent.com/daveaseeman/laptop/master/laptop)
 ```
 
-The [script](https://github.com/monfresh/laptop/blob/master/mac) itself is
+The [script](https://github.com/daveaseeman/laptop/blob/master/mac) itself is
 available in this repo for you to review if you want to see what it does
 and how it works.
 
@@ -76,34 +76,21 @@ What it sets up
 ---------------
 
 * [Bundler] for managing Ruby gems
-* [chruby] for managing [Ruby] versions
 * [Flux] for adjusting your Mac's display color so you can sleep better
-* [GitHub Desktop] for setting up your SSH keys automatically
 * [Heroku Toolbelt] for deploying and managing Heroku apps
 * [Homebrew] for managing operating system libraries
 * [Homebrew Cask] for quickly installing Mac apps from the command line
 * [Homebrew Services] so you can easily stop, start, and restart services
 * [hub] for interacting with the GitHub API
-* [PhantomJS] for headless website testing
-* [Postgres] for storing relational data
-* [ruby-install] for installing different versions of Ruby
-* [Sublime Text 3] for coding all the things
 * [Zsh] as your shell (if you opt in)
 
 [Bundler]: http://bundler.io/
-[chruby]: https://github.com/postmodern/chruby
 [Flux]: https://justgetflux.com/
-[GitHub Desktop]: https://desktop.github.com/
 [Heroku Toolbelt]: https://toolbelt.heroku.com/
 [Homebrew]: http://brew.sh/
 [Homebrew Cask]: http://caskroom.io/
 [Homebrew Services]: https://github.com/Homebrew/homebrew-services
 [hub]: https://github.com/github/hub
-[PhantomJS]: http://phantomjs.org/
-[Postgres]: http://www.postgresql.org/
-[Ruby]: https://www.ruby-lang.org/en/
-[ruby-install]: https://github.com/postmodern/ruby-install
-[Sublime Text 3]: http://www.sublimetext.com/3
 [Zsh]: http://www.zsh.org/
 
 It should take less than 15 minutes to install (depends on your machine and
@@ -155,12 +142,12 @@ Customize in `~/.laptop.local` and `~/Brewfile.local`
 cd ~
 
 # Download the sample files to your computer
-curl --remote-name https://raw.githubusercontent.com/monfresh/laptop/master/.laptop.local
-curl --remote-name https://raw.githubusercontent.com/monfresh/laptop/master/Brewfile.local
+curl --remote-name https://raw.githubusercontent.com/daveaseeman/laptop/master/.laptop.local
+curl --remote-name https://raw.githubusercontent.com/daveaseeman/laptop/master/Brewfile.local
 
-# open the files in Sublime Text
-subl .laptop.local
-subl Brewfile.local
+# open the files in Atom
+atom .laptop.local
+atom Brewfile.local
 ```
 
 Your `~/.laptop.local` is run at the end of the `mac` script.
@@ -171,15 +158,9 @@ above to get started. It lets you install the following tools and Mac apps:
 
 * [Atom] - GitHub's open source text editor
 * [CloudApp] for sharing screenshots and making an animated GIF from a video
-* [Firefox] for testing your Rails app on a browser other than Chrome or Safari
-* [iTerm2] - an awesome replacement for the OS X Terminal
-* [Redis] for storing key-value data
 
 [Atom]: https://atom.io/
 [CloudApp]: http://getcloudapp.com/
-[Firefox]: https://www.mozilla.org/en-US/firefox/new/
-[iTerm2]: http://iterm2.com/
-[Redis]: http://redis.io/
 
 Write your customizations such that they can be run safely more than once.
 See the `mac` script for examples.
@@ -233,6 +214,7 @@ Credits
 
 This laptop script is inspired by
 [thoughbot's laptop](https://github.com/thoughtbot/laptop) script.
+[monfresh's laptop](https://github.com/monfresh/laptop).
 
 ### Public domain
 
