@@ -1,11 +1,5 @@
-This monfresh project is originally based on [thoughtbot's laptop project](https://github.com/thoughtbot/laptop).
-
-## thoughtbot's work
-
-[thoughtbot's laptop project](https://github.com/thoughtbot/laptop), and code I retain here from it, is released under the MIT License:
-
 ```
-Copyright (c) 2011-2014 thoughtbot, inc.
+Copyright (c) 2011-2014 seemingly creative.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

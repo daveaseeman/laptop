@@ -1,15 +1,44 @@
 # cask apps
-cask 'flux'
-cask 'bartender'
-cask 'choosy'
+
+# main apps
+cask '1password'
 cask 'google-chrome'
-cask 'dropbox'
-cask 'google-drive'
-cask 'rescuetime'
-cask 'cleanmymac'
+cask 'firefox'
 cask 'fantastical'
+cask 'evernote'
+cask 'slack'
+cask 'spotify'
+cask 'cleanmymac'
+cask 'nteract'
 cask 'makerbot-desktop'
 cask 'preform'
 cask 'atom'
-cask 'spotify'
-cask 'slack'
+
+# menu bar
+cask 'dropbox'
+cask 'google-backup-and-sync'
+cask 'cloudapp'
+cask 'flux'
+cask 'bartender'
+cask 'choosy'
+cask 'harvest'
+cask 'rescuetime'
+
+# utilities
+cask 'skype'
+cask 'the-unarchiver'
+cask 'bittorrent'
+cask 'solidworks-edrawings'
+cask 'parallels'
+cask 'parallels-toolbox'
+
+# no casks available:
+# cask 'affinity-designer'
+# cask 'affinity-photo'
+# cask 'amphetamine'
+# cask 'magnet'
+# cask 'deliveries'
+# cask 'pdf-toolkit'
+# cask 'ecamm-movie-tools'
+# cask 'video-gif-creator'
+# cask 'screen-record-screen-recorder'
