@@ -3,7 +3,7 @@ Laptop
 
 Open terminal and run:
 ```
-bash <(curl -s https://raw.githubusercontent.com/monfresh/laptop/master/laptop)
+bash <(curl -s https://raw.githubusercontent.com/daveaseeman/laptop/master/laptop)
 ```
 
 then:
