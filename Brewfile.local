@@ -1,34 +1,33 @@
 # cask apps
+### install through app store
 
 # main apps
-cask '1password'
+### cask '1password'
 cask 'google-chrome'
 cask 'firefox'
-cask 'fantastical'
-cask 'evernote'
-cask 'slack'
+### cask 'fantastical'
+### cask 'evernote'
+### cask 'slack'
 cask 'spotify'
 cask 'cleanmymac'
 cask 'nteract'
-cask 'makerbot-desktop'
+cask 'makerbot-print'
 cask 'preform'
 cask 'atom'
 
 # menu bar
 cask 'dropbox'
 cask 'google-backup-and-sync'
-cask 'cloudapp'
+### cask 'cloudapp'
 cask 'flux'
 cask 'bartender'
 cask 'choosy'
-cask 'harvest'
+### cask 'harvest'
 cask 'rescuetime'
 
 # utilities
 cask 'skype'
-cask 'the-unarchiver'
-cask 'bittorrent'
-cask 'solidworks-edrawings'
+### cask 'the-unarchiver'
 cask 'parallels'
 cask 'parallels-toolbox'
 
@@ -40,5 +39,3 @@ cask 'parallels-toolbox'
 # cask 'deliveries'
 # cask 'pdf-toolkit'
 # cask 'ecamm-movie-tools'
-# cask 'video-gif-creator'
-# cask 'screen-record-screen-recorder'
