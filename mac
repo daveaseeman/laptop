@@ -239,39 +239,24 @@ no_zsh_frameworks() {
   [ ! -d "$HOME/.oh-my-zsh" ] && [ ! -d "$HOME/.zpresto" ] && [ ! -d "$HOME/.zim" ] && [ ! -d "$HOME/.zplug" ]
 }
 
-if [ -z "$CI" ] && no_zsh_frameworks && no_prompt_customizations_in_shell_file; then
-  echo -n "Would you like to customize your prompt? [y/n]: "
-  read -r -n 1 response
-  if [ "$response" = "y" ]; then
-    if ! grep -qs "prompt_ruby_info()" "$shell_file"; then
-      cat <<EOT >> "$shell_file"
-  prompt_ruby_info() {
-    if [ -f ".ruby-version" ]; then
-      cat .ruby-version
-    fi
-  }
-EOT
-    fi
-    append_to_file "$shell_file" 'ucolor=$(tput setaf 33);'
-    append_to_file "$shell_file" 'wcolor=$(tput setaf 34);'
-    append_to_file "$shell_file" 'white=$(tput setaf 15);'
-    append_to_file "$shell_file" 'bold=$(tput setaf bold);'
-    append_to_file "$shell_file" 'reset=$(tput setaf sgr0);'
-    append_to_file "$shell_file" 'PS1='\[${ucolor}\]\u';  # `user`'
-    append_to_file "$shell_file" 'PS1+='\[${white}\]/';   # /'
-    append_to_file "$shell_file" 'PS1+='\[${bold}\]';     # bold'
-    append_to_file "$shell_file" 'PS1+='\[${wcolor}\]\W'; # `working directory`'
-    append_to_file "$shell_file" 'PS1+='\[${reset}\]';    # reset'
-    append_to_file "$shell_file" 'PS1+='\[${white}\]: ';  # white'
-    append_to_file "$shell_file" 'export PS1;'
-#     append_to_file "$bash_profile" '# import style from .bashrc'
-#     append_to_file "$bash_profile" 'if [ -f ~/.bashrc ]; then'
-#     append_to_file "$bash_profile" '	source ~/.bashrc'
-#     append_to_file "$bash_profile" 'fi"'
-  else
-    fancy_echo "Skipping prompt customization."
-  fi
-fi
+# if [ -z "$CI" ] && no_zsh_frameworks && no_prompt_customizations_in_shell_file; then
+#   echo -n "Would you like to customize your prompt? [y/n]: "
+#   read -r -n 1 response
+#   if [ "$response" = "y" ]; then
+#     if ! grep -qs "prompt_ruby_info()" "$shell_file"; then
+#       cat <<EOT >> "$shell_file"
+#   prompt_ruby_info() {
+#     if [ -f ".ruby-version" ]; then
+#       cat .ruby-version
+#     fi
+#   }
+# EOT
+#     fi
+
+#   else
+#     fancy_echo "Skipping prompt customization."
+#   fi
+# fi
 
 # if app_is_installed 'GitHub'; then
 #   fancy_echo "It looks like you've already configured your GitHub SSH keys."
