@@ -240,7 +240,7 @@ no_zsh_frameworks() {
 }
 
 if [ -z "$CI" ] && no_zsh_frameworks && no_prompt_customizations_in_shell_file; then
-  echo -n "Would you like to customize your prompt to display the current directory and ruby version? [y/n]: "
+  echo -n "Would you like to customize your prompt? [y/n]: "
   read -r -n 1 response
   if [ "$response" = "y" ]; then
     if ! grep -qs "prompt_ruby_info()" "$shell_file"; then
@@ -252,30 +252,33 @@ if [ -z "$CI" ] && no_zsh_frameworks && no_prompt_customizations_in_shell_file; 
   }
 EOT
     fi
-    # shellcheck disable=SC2016
-    append_to_file "$shell_file" 'GREEN=$(tput setaf 65)'
-    # shellcheck disable=SC2016
-    append_to_file "$shell_file" 'ORANGE=$(tput setaf 166)'
-    # shellcheck disable=SC2016
-    append_to_file "$shell_file" 'NORMAL=$(tput sgr0)'
-    # display pwd in orange, current ruby version in green,
-    # and set prompt character to $
-    # shellcheck disable=SC2016
-    append_to_file "$shell_file" 'precmd () { PS1="${ORANGE}[%~] ${GREEN}$(prompt_ruby_info) ${NORMAL}$ " }'
-    # display directories and files in different colors when running ls
-    append_to_file "$shell_file" 'export CLICOLOR=1;'
-    append_to_file "$shell_file" 'export LSCOLORS=exfxcxdxbxegedabagacad;'
+    append_to_file "$shell_file" 'ucolor=$(tput setaf 33);'
+    append_to_file "$shell_file" 'wcolor=$(tput setaf 34);'
+    append_to_file "$shell_file" 'white=$(tput setaf 15);'
+    append_to_file "$shell_file" 'bold=$(tput setaf bold);'
+    append_to_file "$shell_file" 'reset=$(tput setaf sgr0);'
+    append_to_file "$shell_file" 'PS1='\[${ucolor}\]\u';  # `user`'
+    append_to_file "$shell_file" 'PS1+='\[${white}\]/';   # /'
+    append_to_file "$shell_file" 'PS1+='\[${bold}\]';     # bold'
+    append_to_file "$shell_file" 'PS1+='\[${wcolor}\]\W'; # `working directory`'
+    append_to_file "$shell_file" 'PS1+='\[${reset}\]';    # reset'
+    append_to_file "$shell_file" 'PS1+='\[${white}\]: ';  # white'
+    append_to_file "$shell_file" 'export PS1;'
+#     append_to_file "$bash_profile" '# import style from .bashrc'
+#     append_to_file "$bash_profile" 'if [ -f ~/.bashrc ]; then'
+#     append_to_file "$bash_profile" '	source ~/.bashrc'
+#     append_to_file "$bash_profile" 'fi"'
   else
     fancy_echo "Skipping prompt customization."
   fi
 fi
 
-if app_is_installed 'GitHub'; then
-  fancy_echo "It looks like you've already configured your GitHub SSH keys."
-  fancy_echo "If not, you can do it by signing in to the GitHub app on your Mac."
-elif [ ! -f "$HOME/.ssh/github_rsa.pub" ]; then
-  open ~/Applications/GitHub\ Desktop.app
-fi
+# if app_is_installed 'GitHub'; then
+#   fancy_echo "It looks like you've already configured your GitHub SSH keys."
+#   fancy_echo "If not, you can do it by signing in to the GitHub app on your Mac."
+# elif [ ! -f "$HOME/.ssh/github_rsa.pub" ]; then
+#   open ~/Applications/GitHub\ Desktop.app
+# fi
 
 if [ -f "$HOME/.laptop.local" ]; then
   # shellcheck source=/dev/null
