@@ -265,6 +265,9 @@ no_zsh_frameworks() {
 #   open ~/Applications/GitHub\ Desktop.app
 # fi
 
+append_to_file "$shell_file" 'alias python=python3'
+append_to_file "$shell_file" 'alias pip=pip3'
+
 if [ -f "$HOME/.laptop.local" ]; then
   # shellcheck source=/dev/null
   . "$HOME/.laptop.local"
